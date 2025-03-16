@@ -1,0 +1,65 @@
+.home-header{
+  font-size: 22px;
+  color: #4e495d;
+}
+
+.star-rating-question{
+  font-size: 32px;
+  color: chocolate;
+}
+
+.star{
+    margin: 10px 10px;
+    color: #a9a5a5;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .3s;
+    transform: scale(1);
+  }
+  .star .mat-icon{
+      width: 40px;
+      height: 40px;
+      font-size: 40px;
+  }
+  .star-gold{
+    color: orange;
+  }
+
+  .star-rating-text{
+    margin: 10px 10px 10px 10px;
+    font-size: 30px;
+    color: orange;
+  }
+  
+  /* make all stars orange*/
+  .star-rating-animation:hover .star-hover{
+    color: orange;
+  }
+  /* make all stars right from selected gray*/
+  .star-rating-animation .star-hover:hover ~ .star-hover{
+    color: #ddd;
+  }
+  .star-rating-animation .star-hover:hover{
+    transform: scale(1.3);
+  }
+
+  .field-container{
+    margin: 10px 10px 10px 10px;
+    .field-control .require{
+      input{
+        border-color: red;
+      }
+    }
+    .field-comment{
+      width: 600px;
+      height: 30px;
+    }
+  }
+
+  .field-validation{
+    color: red;
+  }
+
+  .button-section{
+    margin: 20px 20px 20px 20px;
+  }

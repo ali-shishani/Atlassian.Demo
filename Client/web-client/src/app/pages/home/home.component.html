@@ -1,0 +1,65 @@
+<div class="home-comtainer">
+    <div class="home-header">
+        <p>Good day! We hope you are feeling well today.</p>
+        <p>In this page, you can rate how you are feeling today. We will be keeping your records everyday so we can track your wellbeing.</p>
+        <p>The stars below will help you rate your feeling. You can hover over the stars and select your option.</p>
+        <p>Please make sure to enter a valid email address and make sure to use the same email for every time you log your mood. If you would like to add any comment, you can type your words in the comment field.</p>
+    </div>
+    <div class="home-body">
+        <div class="star-rating-container">
+            <div class="star-rating-question">
+                <p>How are you feeling today?</p>
+            </div>
+            <mat-card>
+                <div class="user-input-area" *ngIf="!isSubmitted">
+                    <div class="star-rating-section">
+                        <div class="star-rating-container star-rating-animation" fxLayout="row" fxLayoutAlign="start center" >
+                            <div *ngFor="let star of stars" [ngClass]="[star.class]" (click)="selectStar(star.id)" (mouseover)="onMouseOver(star.id)" (mouseleave)="onMouseLeave(star.id)">
+                                <mat-icon class="star-icon-select">{{star.icon}}</mat-icon>
+                            </div>
+                        </div>
+                        <div class="star-rating-text">{{feelingText}}</div>
+                    </div>
+                    <div class="field-section">
+                        <div class="field-container">
+                            <div class="field-label">
+                                Email
+                            </div>
+                            <div class="field-control require">
+                                <input class="field-email" type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                                <div class="field-validation">
+                                    @if (emailFormControl.dirty && emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                                        <mat-error>Please enter a valid email email</mat-error>
+                                    }
+                                    @if (emailFormControl.dirty && emailFormControl.hasError('required')) {
+                                    <mat-error>Email is <strong>required</strong></mat-error>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-label">
+                                Comment
+                            </div>
+                            <div class="field-control">
+                                <input class="field-comment" matInput [formControl]="commentFormControl" maxlength="256" placeholder="Ex. I need help with...">
+                                <div>
+                                    <mat-hint>{{commentFormControl.value?.length}} / 256</mat-hint>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-section">
+                            <div class="button-continer">
+                                <button mat-raised-button [disabled]="!isValid()" (click)="submit()">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-submit-result-area" *ngIf="isSubmitted">
+                    <p class="submit-result-text" *ngIf="!isAlreadySubmitted">Thank you for recording your mood today! you can leave this page now.</p>
+                    <p class="submit-result-text" *ngIf="isAlreadySubmitted">You already submitted your rating today. Please come back tomorrow.</p>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

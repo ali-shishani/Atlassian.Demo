@@ -1,0 +1,6 @@
+@Atlassian.Demo_HostAddress = http://localhost:5085
+
+GET {{Atlassian.Demo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

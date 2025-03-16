@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Atlassian.Demo.ConsoleApp": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
