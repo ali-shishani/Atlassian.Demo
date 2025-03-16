@@ -2,21 +2,21 @@
 
 ## Project Structure
 
-This solution is created according to DDD design pattern. It contains a Service Layer that is exposed by 2 types of apps, a .NetCore 8 WebApi, and a Console app.
-The Service layer depends on the other layers of configurations, Models, and Data. 
+This solution is created according to DDD design pattern. It contains a Service Layer that is referenced by 2 types of apps, a .NetCore 8 WebApi, and a Console app.
+The Service layer depends on the other layers of configurations, Models, and Data.
+
+The solution contains a test project targetting the Service Layer. The unit testing is implemented using MSTest.
 
 ## Technology/Tools
 - .Net Core 8
 - Entity Framework Core with MySql Connector
 - Docker - MySql Instance
+- MSTest
 
 ## Screenshots
 The WebApi App
 
 <img width="825" alt="image" src="https://github.com/user-attachments/assets/80f44286-8c36-46d3-8e93-0d7ea851870b" />
-
-
-
 
 
 The Console App
