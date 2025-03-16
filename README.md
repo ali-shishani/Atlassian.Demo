@@ -5,6 +5,18 @@
 This solution is created according to DDD design pattern. It contains a Service Layer that is exposed by 2 types of apps, a .NetCore 8 WebApi, and a Console app.
 The Service layer depends on the other layers of configurations, Models, and Data. 
 
+## Technology/Tools
+- .Net Core 8
+- Entity Framework Core with MySql Connector
+- Docker - MySql Instance
+
+## Screenshots
+The WebApi App
+<img width="825" alt="image" src="https://github.com/user-attachments/assets/80f44286-8c36-46d3-8e93-0d7ea851870b" />
+
+The Console App
+<img width="667" alt="image" src="https://github.com/user-attachments/assets/14558d52-dc07-4688-9121-9e396bb6d5e6" />
+
 ## Running
 
 Once the codebase has been cloned, it can be run using the following two commands (note that these commands should be run from the top level directory, where the `docker-compose.yml` file is located):
