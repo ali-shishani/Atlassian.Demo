@@ -4,6 +4,8 @@ using Atlassian.Demo.Models.Constant;
 using Atlassian.Demo.Models.Mood;
 using Atlassian.Demo.Repositories;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace Atlassian.Demo.Services.Mood
 {
@@ -115,6 +117,27 @@ namespace Atlassian.Demo.Services.Mood
                         Console.WriteLine(await response.Content.ReadAsStringAsync());
                         return await Task.FromResult((result, errors));
                     }
+
+                    //// post example
+                    //var employee = JsonConvert.SerializeObject(new MyRequest
+                    //{
+                    //    EmpId = Guid.NewGuid(),
+                    //    Name = "Jaimin",
+                    //    Address = "F302, Nakshtra Heights, Vadodara"
+                    //});
+                    //var request = new StringContent(employee, Encoding.UTF8, "application/json");
+
+                    //var response = await httpClient.PostAsync(url, request);
+                    //if (response.IsSuccessStatusCode)
+                    //{
+                    //    var data = await response.Content.ReadAsStringAsync();
+                    //    Console.WriteLine(data);
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine(response.StatusCode.ToString());
+                    //    Console.WriteLine(await response.Content.ReadAsStringAsync());
+                    //}
                 }
 
                 _logger.LogInformation("Sanity Check Completed Successfully");
