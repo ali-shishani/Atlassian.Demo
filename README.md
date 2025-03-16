@@ -23,5 +23,6 @@ A blank MySQL database is included inside the container, and will start up when 
 # Before you run the app locally
 - You may need to run migration. This will make sure that the database is up to date. You can do so by running the command of update-database in the console.
   
-  <img width="577" alt="image" src="https://github.com/user-attachments/assets/30e7a977-3153-41df-b69b-fbeee91f5266" />
+  <img width="730" alt="image" src="https://github.com/user-attachments/assets/95e1568b-afc1-4982-9f84-8e4348e28295" />
+
 
