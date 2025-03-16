@@ -12,5 +12,6 @@ namespace Atlassian.Demo.Services.Mood
     {
         Task<(GetMoodRatingOptionsResponse, List<Error> errors)> GetMoodRatingOptions();
         Task<(RecordMoodRatingResponse, List<Error> errors)> RecordMoodRating(RecordMoodRatingRequest request);
+        Task<(bool, List<Error> errors)> RunSanityCheck(bool includeHttpClient = true);
     }
 }

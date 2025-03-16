@@ -58,7 +58,9 @@ namespace Atlassian.Demo.ConsoleApp
                 Console.WriteLine();
                 Console.WriteLine("---- customised handling of the errors----");
                 Console.WriteLine($"Console app errors are handled here: {ex.Message}");
-                throw;
+
+                Console.WriteLine($"Click Enter to exit");
+                Console.ReadLine();
             }
         }
 

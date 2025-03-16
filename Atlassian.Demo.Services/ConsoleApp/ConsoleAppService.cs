@@ -43,24 +43,9 @@ namespace Atlassian.Demo.Services.ConsoleApp
         private async Task RunSanityCheck()
         {
             _logger.LogInformation("Running sanity check");
-            Console.WriteLine("Running sanity check" + Environment.NewLine);
 
-            // check if the mood rating options are available
-            var (optionsResult, optionsErrors) = await _moodRatingService.GetMoodRatingOptions();
-            Console.WriteLine($"Sanity Check - rating options result: {string.Join(",", optionsResult.MoodRatingOptions.Select(x => x.DisplayName))}" 
-                + Environment.NewLine);
-
-            // check if I can record a mood rating
-            var request = new RecordMoodRatingRequest()
-            {
-                Email = "aa@bb.com",
-                Rating = 1,
-                Comment = "",
-            };
-
-            var (creationResult, creationErrors) = await _moodRatingService.RecordMoodRating(request);
-            Console.WriteLine($"Sanity Check - rating creation result with Id: {creationResult.Id}"
-                + Environment.NewLine);
+            // check if the the sanity check can run successfully
+            var (optionsResult, optionsErrors) = await _moodRatingService.RunSanityCheck(false);
 
             // sanity check is done
             Console.WriteLine("Click Enter to exit..." + Environment.NewLine);

@@ -1,16 +1,12 @@
 ﻿using Atlassian.Demo.Config.Provider;
 using Atlassian.Demo.Data;
-using Atlassian.Demo.Data.Entity;
 using Atlassian.Demo.Repositories;
 using Atlassian.Demo.Services.ConsoleApp;
 using Atlassian.Demo.Services.Mood;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System.Configuration;
 
 namespace Atlassian.Demo.Services
 {
@@ -39,14 +35,12 @@ namespace Atlassian.Demo.Services
             services.AddSingleton<IAppConfigurationProvider, AppConfigurationProvider>();
             services.AddScoped<AtlassianDemoDbContext>();
             services.AddDbContext<AtlassianDemoDbContext>();
+            services.AddHttpClient();
 
-            if(_isWeb)
-            {
-                services.AddCors(o => o.AddDefaultPolicy(builder =>
+            services.AddCors(o => o.AddDefaultPolicy(builder =>
                 builder.AllowAnyOrigin()
                        .AllowAnyMethod()
                        .AllowAnyHeader()));
-            }
 
             RegisterRepositories(services);
             RegisterServices(services);

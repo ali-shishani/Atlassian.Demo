@@ -50,5 +50,18 @@ namespace Atlassian.Demo.Controllers
                 .WithHttpStatus(Response, HttpStatusCode.OK)
                 .Build();
         }
+
+        [HttpGet("RunSanityCheck")]
+        public async Task<ApiResponse<bool>> RunSanityCheck()
+        {
+            _logger.LogInformation("Running Sanity Check");
+            var (result, errors) = await _moodRatingService.RunSanityCheck();
+
+            return new ApiResponseBuilder<bool>()
+                .WithErrors(errors)
+                .WithData(result)
+                .WithHttpStatus(Response, HttpStatusCode.OK)
+                .Build();
+        }
     }
 }
